@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-5">
+    <h2>Blogs List</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let blog of blogs" (click)="selectBlog(blog)" [class.active]="blog === selectedBlog">
+        {{blog.name}}
+      </li>
+    </ul>
+    <button class="ol-btn blue-btn" (click)="createNewBlog()">New</button>
+  </div>
+  <div class="col-md-5 col-md-offset-2">
+    <blog-details [blog]="selectedBlog" [createHandler]="addBlog" [updateHandler]="updateBlog" [deleteHandler]="deleteBlog">
+    </blog-details>
+  </div>
+</div>
